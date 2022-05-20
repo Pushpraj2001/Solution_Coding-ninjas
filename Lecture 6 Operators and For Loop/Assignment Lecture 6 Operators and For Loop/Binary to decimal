@@ -30,26 +30,31 @@ Sample Output 2 :
 ---------------------------------------------------------------------------------------------------------
 
 
+
 import java.util.Scanner;
 public class Main {
-    
-    static int revers(int n) 
+   
+    static int B2D(int n) 
     { 
-        int rn = 0; 
-        while(n > 0) 
+        int num = n;
+        int dec_value =0;
+        int base =1;
+        int temp = num;
+        while(temp> 0) 
         { 
-            rn = rn * 10 + n% 10; 
-            n = n/ 10; 
+            int last_digit = temp % 10;
+             temp = temp/ 10; 
+            dec_value += last_digit *base;
+            base = base *2; 
         } 
-        return rn; 
+        return dec_value; 
     } 
       
     public static void main (String[] args)  
     { 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(); 
-        System.out.println(revers(n)); 
-    } 
-    
+        System.out.println(B2D(n)); 
+    }
+}
 
-	}
